@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 
-const DB_PATH = path.join(process.cwd(), "db.json");
+const DB_PATH = process.env.NODE_ENV === "production" ? "/data/db.json" : path.join(process.cwd(), "db.json");
 
 export interface User {
   id: number;
